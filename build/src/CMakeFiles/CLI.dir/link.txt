@@ -1,0 +1,1 @@
+/usr/sbin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/CLI.dir/link.d CMakeFiles/CLI.dir/main.cpp.o -o CLI
