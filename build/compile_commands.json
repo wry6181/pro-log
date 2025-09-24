@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/home/sb/dev/pro-log/build/src",
-  "command": "/usr/sbin/c++   -O3 -DNDEBUG -std=c++20 -o CMakeFiles/CLI.dir/main.cpp.o -c /home/sb/dev/pro-log/src/main.cpp",
-  "file": "/home/sb/dev/pro-log/src/main.cpp",
+  "directory": "/Users/belasolyom/Development/pro-log/build/src",
+  "command": "/usr/bin/c++   -O3 -DNDEBUG -std=c++20 -arch arm64 -o CMakeFiles/CLI.dir/main.cpp.o -c /Users/belasolyom/Development/pro-log/src/main.cpp",
+  "file": "/Users/belasolyom/Development/pro-log/src/main.cpp",
   "output": "src/CMakeFiles/CLI.dir/main.cpp.o"
 }
 ]
