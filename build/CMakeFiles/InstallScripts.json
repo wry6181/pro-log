@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/belasolyom/Development/pro-log/build/cmake_install.cmake",
-		"/Users/belasolyom/Development/pro-log/build/src/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
