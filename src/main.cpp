@@ -1,34 +1,44 @@
 #include "commands.h"
+#include <cstddef>
 #include <iostream>
+#include <utility>
 #include <vector>
 
 std::vector<std::string> tokens;
 
-void string_tokenaizer(std::string &text) {
-  auto index = text.find_first_of(" ");
-  auto first = text.substr(0, index);
-  std::cout << first << '\n';
+std::pair<std::string, std::string> StringSlicer(std::string &str) {
+  auto index_to = str.find_first_of(" ");
+  if (index_to > str.size()) {
+    return std::make_pair(str, "");
+  }
+  auto first_slice = str.substr(0, index_to);
+  auto second_slice = str.substr(index_to, str.size());
+  return std::make_pair(first_slice, second_slice);
 }
 
-int main() {
-
-  while (true) {
-
-    std::string arg{""};
-    std::cin >> arg;
-    string_tokenaizer(arg);
-    if (arg == "init") {
-      Init i{};
-      i.name = "init";
-      std::cout << "added to the que\n";
-      command_que.push_back(i);
-    }
-    if (arg == "timer") {
-      Timer t{};
-      t.name = "timer";
-      t.duration = 2000;
-      std::cout << "added to the que\n";
-      command_que.push_back(t);
+void StringTokenaizer(const std::string &text) {
+  if (!text.empty()) {
+    auto temp = text;
+    while (true) {
+      auto res = StringSlicer(temp);
+      tokens.push_back(res.first);
+      if (res.second == "") {
+        break;
+      }
+      temp = res.second;
     }
   }
+}
+int main() {
+
+  // while (true) {
+
+  std::string arg{""};
+  std::cin >> arg;
+  StringTokenaizer(arg);
+  for (auto token : tokens) {
+    std::cout << token << ", ";
+  }
+  std::cout << "\n";
+  //}
 }

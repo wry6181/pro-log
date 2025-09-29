@@ -3,7 +3,7 @@
 # Clean CMake build and run script
 
 # Configuration
-BUILD_DIR="build"
+BUILD_DIR=".build"
 CLI_EXECUTABLE="src/CLI"
 QUIET_MODE=false
 

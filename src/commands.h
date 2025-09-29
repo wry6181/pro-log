@@ -1,15 +1,20 @@
 #include <string>
 #include <vector>
 
-struct Command {};
+struct Command {
+  std::string name;
+  Command(std::string name) : name(name) {}
+  virtual ~Command();
+};
 
 struct Init : Command {
-  std::string name;
+  Init(std::string name) : Command(name) {}
 };
 
 struct Timer : Command {
-  std::string name;
   double duration;
+  Timer(std::string name, double duration)
+      : Command(name), duration(duration) {}
 };
 
 std::vector<Command> command_que{};
